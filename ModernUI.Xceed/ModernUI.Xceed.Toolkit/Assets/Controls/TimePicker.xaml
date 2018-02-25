@@ -45,50 +45,12 @@
             </Setter.Value>
         </Setter>
     </Style>
-
-    <Style x:Key="TimeItemStyle" TargetType="ListBoxItem" BasedOn="{StaticResource {x:Type ListBoxItem}}">
-        <Style.Setters>
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="Foreground" Value="{DynamicResource ItemText}" />
-        </Style.Setters>
-        <Style.Triggers>
-            <!-- MouseOver Only -->
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True" />
-                    <Condition Property="IsSelected" Value="False" />
-                </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource InputBackgroundHover}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
-            </MultiTrigger>
-
-            <!-- Selected Only -->
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="False" />
-                    <Condition Property="IsSelected" Value="True" />
-                </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource InputBackgroundHover}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
-            </MultiTrigger>
-
-            <!-- MouseOver + Selected -->
-            <MultiTrigger>
-                <MultiTrigger.Conditions>
-                    <Condition Property="IsMouseOver" Value="True" />
-                    <Condition Property="IsSelected" Value="True" />
-                </MultiTrigger.Conditions>
-                <Setter Property="Background" Value="{DynamicResource InputBackgroundHover}" />
-                <Setter Property="BorderBrush" Value="{DynamicResource Accent}" />
-            </MultiTrigger>
-        </Style.Triggers>
-    </Style>
-
+    
     <Style TargetType="{x:Type xctk:TimePicker}">
         <Setter Property="Background" Value="{DynamicResource InputBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource InputText}" />
         <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
-        <Setter Property="BorderThickness" Value="1,1,0,1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Right" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
@@ -106,6 +68,7 @@
                                        IsTabStop="False"
                                        Background="{TemplateBinding Background}"
                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                       Padding="2,2,2,1"
                                        HorizontalContentAlignment="Stretch"
                                        VerticalContentAlignment="Stretch"
                                        BorderBrush="{TemplateBinding BorderBrush}"
@@ -166,8 +129,7 @@
                                 <Grid>
                                     <ListBox x:Name="PART_TimeListItems"
                                     BorderThickness="0"
-                                    DisplayMemberPath="Display"
-                                    ItemContainerStyle="{StaticResource TimeItemStyle}" />
+                                    DisplayMemberPath="Display" />
                                 </Grid>
                             </Border>
                         </Popup>
