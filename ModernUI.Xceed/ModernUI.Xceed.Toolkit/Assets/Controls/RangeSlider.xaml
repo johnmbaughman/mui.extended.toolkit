@@ -54,14 +54,13 @@
   <!-- Thumb Template    -->
   <!-- ********************** -->
   <ControlTemplate x:Key="ThumbTemplate" TargetType="{x:Type Thumb}">
-    <Grid>
-      <Border x:Name="BackgroundFadingBorder" Background="Black" />
-      <Border x:Name="BackgroundBorder" BorderBrush="{DynamicResource SliderThumbBorder}" BorderThickness="1">
-        <Rectangle x:Name="MainBorder"
+        <Grid>
+            <Border x:Name="BackgroundBorder" BorderThickness="0">
+            <Rectangle x:Name="MainBorder"
                    Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, TargetNullValue={StaticResource NormalThumbFillBackground}}"
                    StrokeThickness="1"
                    Stroke="{DynamicResource SliderThumbBorder}"
-                   Width="9"
+                   Width="11"
                    Height="20"
                    Opacity="1"
                    ToolTip="{Binding RelativeSource={RelativeSource AncestorType={x:Type Slider}}, Path=Value, StringFormat=\{0:00.00\}}"
