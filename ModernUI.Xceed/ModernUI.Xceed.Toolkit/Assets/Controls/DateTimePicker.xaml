@@ -50,7 +50,7 @@
         <Setter Property="Background" Value="{DynamicResource InputBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource InputText}" />
         <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
-        <Setter Property="BorderThickness" Value="1,1,0,1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="HorizontalContentAlignment" Value="Right" />
         <Setter Property="TextAlignment" Value="Right" />
@@ -72,6 +72,7 @@
                                              Background="{TemplateBinding Background}"
                                              BorderThickness="{TemplateBinding BorderThickness}"
                                              BorderBrush="{TemplateBinding BorderBrush}"
+                                             Padding="2,2,2,1"
                                              ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
                                              HorizontalContentAlignment="Stretch"
                                              VerticalContentAlignment="Stretch"
